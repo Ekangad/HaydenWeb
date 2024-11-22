@@ -52,3 +52,43 @@ function updateTimer() {
 // Update the timer every second
 setInterval(updateTimer, 1000);
 updateTimer();
+
+function generateCalendar() {
+    const calendarGrid = document.getElementById('calendarGrid');
+    const monthYear = document.getElementById('monthYear');
+    const now = new Date();
+
+    // Get current month and year
+    const year = now.getFullYear();
+    const month = now.getMonth(); // 0-indexed (January = 0)
+    const monthName = now.toLocaleString('default', { month: 'long' });
+
+    // Set the title
+    monthYear.textContent = `${monthName} ${year}`;
+
+    // Clear any existing days (but keep day names)
+    const dayNames = 7; // First 7 items are day names
+    while (calendarGrid.childElementCount > dayNames) {
+        calendarGrid.lastChild.remove();
+    }
+
+    // Get the first and last day of the month
+    const firstDay = new Date(year, month, 1).getDay(); // Day of the week (0 = Sunday)
+    const daysInMonth = new Date(year, month + 1, 0).getDate(); // Total days in the month
+
+    // Add empty divs for days before the first day
+    for (let i = 0; i < firstDay; i++) {
+        const emptyDiv = document.createElement('div');
+        calendarGrid.appendChild(emptyDiv);
+    }
+
+    // Add day numbers
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.textContent = day;
+        calendarGrid.appendChild(dayDiv);
+    }
+}
+
+// Generate the calendar on page load
+generateCalendar();

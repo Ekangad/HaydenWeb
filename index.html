@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Schedule</title>
+    <title>HaydenWeb</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -11,13 +11,40 @@
         <div id="timer"></div>
     </header>
     <main>
-        <div class="schedule">
-            <div class="period" id="period1">Period 1: 8:40 AM - 9:55 AM</div>
-            <div class="period" id="period2">Period 2: 10:00 AM - 11:15 AM</div>
-            <div class="period" id="lunch">Lunch: 11:15 AM - 12:15 PM</div>
-            <div class="period" id="period3">Period 3: 12:15 PM - 1:30 PM</div>
-            <div class="period" id="period4">Period 4: 1:35 PM - 2:50 PM</div>
-            <div class="period" id="period5">OOOOOOOO</div>
+        <div class="main-container">
+
+            <div class="Grade calculator">
+                <div>Put grade calc here, refence calculator.net</div>
+            </div>
+
+            <div class="schedule">
+                <div id="timer"></div>
+                <div class="period" id="period1">Period 1: 8:40 AM - 9:55 AM</div>
+                <div class="period" id="period2">Period 2: 10:00 AM - 11:15 AM</div>
+                <div class="period" id="lunch">Lunch: 11:15 AM - 12:15 PM</div>
+                <div class="period" id="period3">Period 3: 12:15 PM - 1:30 PM</div>
+                <div class="period" id="period4">Period 4: 1:35 PM - 2:50 PM</div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="calendar">
+                <h2 id="monthYear"></h2>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Days of the week -->
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+            </div>
+
+            <div class="weather">
+                <div>Put weather for the next 7 days here</div>
+            </div>
+
         </div>
     </main>
     <script src="index.js"></script>
