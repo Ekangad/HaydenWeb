@@ -120,3 +120,73 @@ header {
 .period:not(.current) {
     color: black;
 }
+.grade-calculator-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Adds space at the top */
+  }
+  .grade-calculator-container h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .input-group {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .input-group input {
+    width: 48%; /* Makes inputs take 48% of the width, leaving space in between */
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  .input-group input:last-child {
+    margin-right: 0; /* Removes the margin on the last input */
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Responsive Styling for Smaller Screens */
+  @media (max-width: 768px) {
+    .grade-calculator-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .input-group {
+      flex-direction: column; /* Stack the inputs on top of each other on smaller screens */
+      align-items: flex-start;
+    }
+  
+    .input-group input {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    button {
+      font-size: 14px; /* Adjust button font size for smaller screens */
+    }
+  }
