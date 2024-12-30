@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaydenWeb</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"  type="text/css" href= "{{url_for('static', filename='css/index.css')}}">
 </head>
 <body>
 
@@ -21,14 +21,75 @@
             <!-- Calendar Section --><!-- Calendar Section -->
             <!-- Calendar Section --><!-- Calendar Section -->
 
-            <div class="Grade calculator">
-                <div>Put grade calc here, refence calculator.net</div>
-                
-            </div>
-
-            <div class="Grade calculator">
-                <div>Put grade calc here, refence calculator.net</div>
-            </div>
+            <div class="grade-calculator-container">
+                <h1>Grade Calculator</h1>
+                <p>Enter your grades and their weight as percentages. You can rename each grade to a custom label.</p>
+            
+                <!-- Grade Slots (10 slots) -->
+                <div id="grade-slots">
+                  <!-- Slot Template -->
+                  <div class="input-group">
+                    <input type="text" id="label1" placeholder="Label (e.g., Unit 1 Test)" />
+                    <input type="number" id="grade1" placeholder="Grade (%)">
+                    <input type="number" id="weight1" placeholder="Weight (%)">
+                  </div>
+            
+                  <div class="input-group">
+                    <input type="text" id="label2" placeholder="Label (e.g., Unit 2 Quiz)" />
+                    <input type="number" id="grade2" placeholder="Grade (%)">
+                    <input type="number" id="weight2" placeholder="Weight (%)">
+                  </div>
+            
+                  <div class="input-group">
+                    <input type="text" id="label3" placeholder="Label (e.g., Midterm Exam)" />
+                    <input type="number" id="grade3" placeholder="Grade (%)">
+                    <input type="number" id="weight3" placeholder="Weight (%)">
+                  </div>
+            
+                  <!-- Add similar blocks for Grade 4 to Grade 10 -->
+                  <div class="input-group">
+                    <input type="text" id="label4" placeholder="Label (e.g., Assignment)" />
+                    <input type="number" id="grade4" placeholder="Grade (%)">
+                    <input type="number" id="weight4" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label5" placeholder="Label (e.g., Final Exam)" />
+                    <input type="number" id="grade5" placeholder="Grade (%)">
+                    <input type="number" id="weight5" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label6" placeholder="Label" />
+                    <input type="number" id="grade6" placeholder="Grade (%)">
+                    <input type="number" id="weight6" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label7" placeholder="Label" />
+                    <input type="number" id="grade7" placeholder="Grade (%)">
+                    <input type="number" id="weight7" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label8" placeholder="Label" />
+                    <input type="number" id="grade8" placeholder="Grade (%)">
+                    <input type="number" id="weight8" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label9" placeholder="Label" />
+                    <input type="number" id="grade9" placeholder="Grade (%)">
+                    <input type="number" id="weight9" placeholder="Weight (%)">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="label10" placeholder="Label" />
+                    <input type="number" id="grade10" placeholder="Grade (%)">
+                    <input type="number" id="weight10" placeholder="Weight (%)">
+                  </div>
+                </div>
+            
+                <!-- Calculate Button -->
+                <button id="calculateButton">Calculate Weighted Average</button>
+            
+                <!-- Result -->
+                <div id="result"></div>
+              </div>
 
             <div class="schedule">
                 <div id="timer"></div>
@@ -72,6 +133,6 @@
 
         </div>
     </main>
-    <script src="index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>

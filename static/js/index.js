@@ -92,3 +92,45 @@ function generateCalendar() {
 
 // Generate the calendar on page load
 generateCalendar();
+// Function to calculate the weighted average
+function calculateGrade() {
+    let totalWeightedSum = 0; // To store the sum of weighted scores
+    let totalProvidedWeight = 0; // To store the sum of provided weights
+  
+    // Loop through all 10 grade slots
+    for (let i = 1; i <= 10; i++) {
+      let grade = parseFloat(document.getElementById(`grade${i}`).value);
+      let weight = parseFloat(document.getElementById(`weight${i}`).value);
+  
+      // Skip if any field in this slot is empty or invalid
+      if (isNaN(grade) || isNaN(weight) || weight <= 0) {
+        continue;
+      }
+  
+      // Add the weighted score to the total
+      totalWeightedSum += (grade * weight);
+  
+      // Add the weight to the total provided weight
+      totalProvidedWeight += weight;
+    }
+  
+    // Validate that some weight was provided
+    if (totalProvidedWeight === 0) {
+      document.getElementById("result").innerHTML =
+        "Please enter valid grades and weights.";
+      return;
+    }
+  
+    // Normalize the totalWeightedSum by the provided weight
+    let weightedAverage = totalWeightedSum / totalProvidedWeight;
+  
+    // Display the result
+    document.getElementById("result").innerHTML = `The Weighted Average is: ${weightedAverage.toFixed(
+      2
+    )}%`;
+  }
+  
+  // Add event listener to the button to calculate grades on click
+  document
+    .getElementById("calculateButton")
+    .addEventListener("click", calculateGrade);
